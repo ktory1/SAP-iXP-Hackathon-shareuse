@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Food = require('../models/Food');
-const food_controller = require('../controllers/foods');
+const mongoose = require('mongoose');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -37,7 +37,8 @@ router.post('/food', function(req, res) {
     imgsrc: req.body.imgsrc,
     status: req.body.status,
     active: true,
-    creator: 'me'
+    creator: 'me',
+    acceptor: ''
   });
   food.save().then(result => {
     // console.log(result);
