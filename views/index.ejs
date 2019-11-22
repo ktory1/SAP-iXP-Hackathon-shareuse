@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Guest User</title>
+  <title>Home</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css">
@@ -15,60 +15,8 @@
 </head>
 <body style="background-color:#FAFAFA;">
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
 
-
-    <div class="navbar-header">
-     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <strong><a class="navbar-brand" href="index.html" style="color:#0066ff">Event Meet</a></strong>
-    </div>
-
-
-    <div class="collapse navbar-collapse" id="collapse">
-    <ul class="nav navbar-nav navbar-right" >
-      <li class="active"><a href="HomepageNewUser.html" style="color:#6f7287">Home</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Help
-        <span class="caret"></span></a>
-         <ul class="dropdown-menu">
-          <li ><a href="#">How to create event?</a></li>
-          <li><a href="#">How to buy tickets?</a></li>
-          <li><a href="#">How to cancel the ticket?</a></li>
-          <li><a href="#">Contact Us?</a></li>
-            <li class="divider"></li>
-          <li><a href="#">Any other issue</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Form Group</a></li>
-      <li><a href="Login.html">SignIn</a></li>
-    </ul>
-     <form class="navbar-form navbar-left  " action="#">
-      <div class="input-group">
-        <input type="text" class="form-control mystyle" placeholder="Search Event" name="search" required>
-        <div class="input-group-btn">
-          <button class="btn btn-default mystyle1 " type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-    </div>
-
-
-  </div>
-</nav>
-
-
-
-
-
-
-
+<% include Header %>
 
 <div class="slider" style="margin-top:1px;">
 <div id="slider1" class="carousel slide" data-ride="carousel">
@@ -112,50 +60,6 @@
 </div>
 </div>
 
-
-
-
-
-
-<div class="container" style="background-color:#FAFAFA">
-  <div class="row" style="margin-top:70px">
-    <div class="col-sm-4" >
-   <p class= "what-happening" style="margin-bottom:0px;"> <strong>See whats happening near you...</strong></p>
-
-   <p style="margin-top:0px;font-size:small;color:#6f7287"><strong>Filter by category</strong></p>
-
-    </div>
-
-    <div class="col-sm-8">
-
-   <div>
-   <button type="button" class="btn btn-primary btn-md category" >Academic</button>
-   <button type="button" class="btn btn-primary btn-md category" >Sports</button>
-   <button type="button" class="btn btn-primary btn-md category" >Health</button>
-   <button type="button" class="btn btn-primary btn-md category" >Photography</button>
-   <button type="button" class="btn btn-primary btn-md category" >Music</button>
-   <button type="button" class="btn btn-primary btn-md category" >Beliefs</button>
-
-   <div class="dropdown" style="display:inline; margin:0px">
-  <button class="btn btn-primary dropdown-toggle category" type="button" data-toggle="dropdown">More..
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Social</a></li>
-    <li><a href="#">Arts</a></li>
-    <li><a href="#">Film</a></li>
-    <li><a href="#">Writing</a></li>
-  </ul>
-</div>
-
-   </div>
-
-    </div> <!--end of column 7-->
-
-
-
-
-   </div>  <!--end of row-->
-</div> <!--end of container-->
 
 
 
@@ -219,6 +123,41 @@
    					</div>
    				</div>
    			</div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="transform-on-hover card ">
+            <a class="lightbox" href="#"><img src="images/gallery1.jpg" class="card-img-top" style="max-height:200px; width:100%" alt="error loading image"></a>
+            <div class="card-body">
+              <h6>Lorem Ipsum</h6>
+
+              <p class="text-muted card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="transform-on-hover card ">
+            <a class="lightbox" href="#"><img src="images/gallery1.jpg" class="card-img-top" style="max-height:200px; width:100%" alt="error loading image"></a>
+            <div class="card-body">
+              <h6>Lorem Ipsum</h6>
+
+              <p class="text-muted card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="transform-on-hover card ">
+            <a class="lightbox" href="#"><img src="images/gallery1.jpg" class="card-img-top" style="max-height:200px; width:100%" alt="error loading image"></a>
+            <div class="card-body">
+              <h6>Lorem Ipsum</h6>
+
+              <p class="text-muted card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+          </div>
+        </div>
+
+
 
 
 
