@@ -1,14 +1,14 @@
-<%= title %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Guest User</title>
+  <title>Logged In User</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/mystyle.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
   <script src="js/bootstrap.js"></script>
 
 
@@ -17,25 +17,25 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
-
-
+  
+  
     <div class="navbar-header">
      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
       </button>
-      <strong><a class="navbar-brand" href="index.html" style="color:#0066ff">Event Meet</a></strong>
+      <strong><a class="navbar-brand" href="HomepageUserLoggedIn.html" style="color:#0066ff">Event Meet</a></strong>
     </div>
-
-
+    
+    
     <div class="collapse navbar-collapse" id="collapse">
     <ul class="nav navbar-nav navbar-right" >
-      <li class="active"><a href="HomepageNewUser.html" style="color:#6f7287">Home</a></li>
+      <li class="active"><a href="HomepageUserLoggedIn.html" style="color:#6f7287">Home</a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Help
         <span class="caret"></span></a>
-         <ul class="dropdown-menu">
+        <ul class="dropdown-menu">
           <li ><a href="#">How to create event?</a></li>
           <li><a href="#">How to buy tickets?</a></li>
           <li><a href="#">How to cancel the ticket?</a></li>
@@ -45,7 +45,21 @@
         </ul>
       </li>
       <li><a href="#">Form Group</a></li>
-      <li><a href="Login.html">SignIn</a></li>
+       <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown"  href="#"><i style="font-size:17px;" class="fas fa-user-circle"></i>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li ><a href="#">Tickets (0)</a></li>
+          <li><a href="#">Events Posted (0)</a></li>
+           <li><a href="#">Followers (0)</a></li>
+          <li class="divider"></li>
+          <li><a href="UserProfile.html">Profile Settings</a></li>
+            <li><a href="#">Create Event</a></li>
+             <li class="divider"></li>
+             <li><a href="index.html">Logout</a></li>
+             
+        </ul>
+      </li>
     </ul>
      <form class="navbar-form navbar-left  " action="#">
       <div class="input-group">
@@ -58,10 +72,12 @@
       </div>
     </form>
     </div>
-
-
-  </div>
+    
+    
+  </div>	
 </nav>
+
+
 
 
 
@@ -76,7 +92,7 @@
 <ol class="carousel-indicators">
     <li data-target="#slider1" data-slide-to="0" class="active"></li>
     <li data-target="#slider1" data-slide-to="1"></li>
-
+    
   </ol>
 
 
@@ -123,11 +139,11 @@
    <p class= "what-happening" style="margin-bottom:0px;"> <strong>See whats happening near you...</strong></p>
 
    <p style="margin-top:0px;font-size:small;color:#6f7287"><strong>Filter by category</strong></p>
-
+    
     </div>
-
+      
     <div class="col-sm-8">
-
+     
    <div>
    <button type="button" class="btn btn-primary btn-md category" >Academic</button>
    <button type="button" class="btn btn-primary btn-md category" >Sports</button>
@@ -135,7 +151,7 @@
    <button type="button" class="btn btn-primary btn-md category" >Photography</button>
    <button type="button" class="btn btn-primary btn-md category" >Music</button>
    <button type="button" class="btn btn-primary btn-md category" >Beliefs</button>
-
+   
    <div class="dropdown" style="display:inline; margin:0px">
   <button class="btn btn-primary dropdown-toggle category" type="button" data-toggle="dropdown">More..
   <span class="caret"></span></button>
@@ -146,14 +162,14 @@
     <li><a href="#">Writing</a></li>
   </ul>
 </div>
-
+  
    </div>
-
+   
     </div> <!--end of column 7-->
-
-
-
-
+    
+    
+   
+    
    </div>  <!--end of row-->
 </div> <!--end of container-->
 
@@ -168,86 +184,85 @@
 
   <div class="gallery-container cards-container">
    	<div class="container">
-
+   		
    		<div class="row">
    			<div class="col-md-6 col-lg-4">
    				<div class="transform-on-hover card ">
-
+                
    					<a class="lightbox" href="#"><img src="images/gallery1.jpg" class="card-img-top" style="max-height:200px; width:100%" alt="error loading image"></a>
    					<div class="card-body">
    						<h6>Lorem Ipsum</h6>
-
+                        
    						<p class="text-muted card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
    					</div>
    				</div>
-
+                
    			</div>
-
+   			
    			<div class="col-md-6 col-lg-4">
    				<div class="transform-on-hover card ">
-
+                
    					<a class="lightbox" href="#"><img src="images/gallery1.jpg" class="card-img-top" style="max-height:200px; width:100%" alt="error loading image"></a>
    					<div class="card-body">
    						<h6>Lorem Ipsum</h6>
-
+                        
    						<p class="text-muted card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
    					</div>
    				</div>
    			</div>
-
-
-
+            
+         
+   			
    			<div class="col-md-6 col-lg-4">
    				<div class="transform-on-hover card ">
-
+                
    	             <a class="lightbox" href="#"><img src="images/gallery1.jpg" class="card-img-top" style="max-height:200px; width:100%" alt="error loading image"></a>
    					<div class="card-body">
    						<h6>Lorem Ipsum</h6>
    						<p class="text-muted card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
    					</div>
    				</div>
-
+                
    			</div>
-
+   		
    			<div class="col-md-6 col-lg-4">
    				<div class="transform-on-hover card ">
    					<a class="lightbox" href="#"><img src="images/gallery1.jpg" class="card-img-top" style="max-height:200px; width:100%" alt="error loading image"></a>
    					<div class="card-body">
    						<h6>Lorem Ipsum</h6>
-
+                        
    						<p class="text-muted card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
    					</div>
    				</div>
    			</div>
-
-
-
+            
+   			
+            
    			<div class="col-md-6 col-lg-4">
    				<div class="transform-on-hover card ">
    					<a class="lightbox" href="#"><img src="images/gallery1.jpg" class="card-img-top" style="max-height:200px; width:100%" alt="error loading image"></a>
    					<div class="card-body">
-
+                    
    						<h6>Lorem Ipsum</h6>
    						<p class="text-muted card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
    					</div>
    				</div>
    			</div>
-
+   			
    			<div class="col-md-6 col-lg-4">
    				<div class="transform-on-hover card ">
    					<a class="lightbox" href="#"><img src="images/gallery1.jpg" class="card-img-top" style="max-height:200px; width:100%" alt="error loading image"></a>
    					<div class="card-body">
    						<h6>Lorem Ipsum</h6>
-
+                        
    						<p class="text-muted card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
    					</div>
    				</div>
    			</div>
    		</div>
-
+        
    	</div>
    </div>
-
 
 
 
@@ -264,22 +279,22 @@
     <div class="col-sm-3" style="">
     <p class="footer-text1"> Event Meet</p>
 
-
+    
     <p class="footer-text2"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in </p>
-
+  
     <p>	 <a href="#" class="btn btn-danger"> Read more</a></p>
-
-
-
+ 
+ 
+ 
     </div>
-
-
+    
+     
     <div class="col-sm-3">
+    
 
-
-
+      
        <p class="footer-text1">Quick Links</p>
-
+     
      <ul>
     <li style="margin-bottom:7px;"><a href="#">&raquo; Home</a></li>
     <li style="margin-bottom:7px;"><a href="#">&raquo; Privacy</a></li>
@@ -287,24 +302,24 @@
     <li style="margin-bottom:7px;"><a href="#">&raquo; Help</a></li>
     <li style="margin-bottom:7px;"><a href="#">&raquo; Terms of Service</a></li>
     <li style="margin-bottom:7px;"><a href="#">&raquo; Sitemap</a></li>
-
+  
   </ul>
-
+     
 
     </div>
-
-
+    
+    
      <div class="col-sm-3">
-
+     
            <p class="footer-text1">Contact Us</p>
            <p><strong>Address:</strong> abc, mnjh(Onbvj)</p>
            <p><strong>Email:</strong> mnhsgsj@jkdkdjskd.com</p>
            <p><strong>Phone:</strong> +91-0000000000</p>
     </div>
-
+    
       <div class="col-sm-3">
-
-
+      
+      
      <p class="footer-text1">Connect with us</p>
           <p>
           <a href="#" style="color:white"> <i class="fa fa-facebook" style="font-size:25px"></i></a>
@@ -319,13 +334,13 @@
            </p>
 
     </div>
-
-
-
+    
+  
+  
   </div> <!--row-->
-
+   
 </div> <!--container-->
-
+      
 </div> <!--container fluid-->
 
 
