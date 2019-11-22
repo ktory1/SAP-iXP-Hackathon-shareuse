@@ -46,7 +46,7 @@ router.post('/food', function(req, res) {
     status: req.body.status,
     active: true,
     creator: 'me',
-    acceptor: 'me'
+    acceptor: ''
   });
   food.save().then(result => {
     // console.log(result);
