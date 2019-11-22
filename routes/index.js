@@ -41,19 +41,17 @@ router.post('/food', function(req, res) {
     _id: new mongoose.Types.ObjectId(),
     title: req.body.title,
     description: req.body.description,
-    expiration: req.body.expiration,
+    location: req.body.location,
+    expiration: new Date(new Date().getTime() + req.body.availability * 60000),
     imgsrc: req.body.imgsrc,
-    status: req.body.status,
+    status: 'available',
     active: true,
     creator: 'me',
-    acceptor: 'me'
+    acceptor: ''
   });
   food.save().then(result => {
-    // console.log(result);
-    res.status(201).json({
-      message: 'created product successfully',
-      createdFood: result
-    });
+    console.log(result);
+    res.render('create');
   });
 });
 

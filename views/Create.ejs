@@ -1,152 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Upload Item</title>
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/mystyle.css" />
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"
+    />
 
-    <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css"
+      rel="stylesheet"
+    />
 
     <style>
-        .header {
-            border-bottom: 1px solid #cccccc;
-        }
+      .header {
+        border-bottom: 1px solid #cccccc;
+      }
 
-        form {
-            margin: 20px;
-            width: 60%;
-        }
+      form {
+        margin: 20px;
+        width: 60%;
+      }
 
-        #edit_profile .row {
-            padding: 10px 0px 10px 0px;
-        }
+      #edit_profile .row {
+        padding: 10px 0px 10px 0px;
+      }
     </style>
     <script>
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
 
-                reader.onload = function (e) {
-                    $('#image_placeholder')
-                        .attr('src', e.target.result)
-                        .width(200)
-                        .height(200);
-                };
+          reader.onload = function(e) {
+            $('#image_placeholder')
+              .attr('src', e.target.result)
+              .width(200)
+              .height(200);
+          };
 
-                reader.readAsDataURL(input.files[0]);
-            }
+          reader.readAsDataURL(input.files[0]);
         }
-
+      }
     </script>
-</head>
+  </head>
 
-
-
-<body style="background-color:#FAFAFA;">
-
+  <body style="background-color:#FAFAFA;">
     <% include Header %>
 
     <div class="container-fluid" style="margin-top: 70px;">
-        <h1>Upload your Sharing!!</h1>
+      <h1>Upload your Sharing!!</h1>
     </div>
-
 
     <div class="container-fluid">
-        <div class="row">
+      <div class="row">
+        <form id="edit_profile" action="/food" method="post">
+          <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-3">
+              <label class="control-label">
+                Item Name <span class="text-danger">*</span>
+              </label>
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9">
+              <input
+                type="text"
+                name="title"
+                class="form-control"
+                placeholder="Enter event name here"
+                required
+              />
+            </div>
+          </div>
 
-            <form id="edit_profile" action="HomepageUserLoggedIn.html">
+          <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-3">
+              <label class="control-label">
+                Location <span class="text-danger">*</span>
+              </label>
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9">
+              <input
+                type="text"
+                name="location"
+                class="form-control"
+                placeholder="Enter your location"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-3">
+              <label class="control-label">
+                Availability <span class="text-danger">*</span>
+              </label>
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9">
+              <select name="availability">
+                <option value="30">30 min</option>
+                <option value="60">1 hour</option>
+                <option value="120">2 hours</option>
+                <option value="180">3 hours</option>
+                <option value="240">4 hours</option>
+                <option value="300">5 hours</option>
+                <option value="360">6 hours</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-3">
+              <label class="control-label">
+                Item Description <span class="text-danger">*</span>
+              </label>
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9">
+              <textarea
+                class="form-control"
+                name="description"
+                rows="3"
+                placeholder="Please describe your item"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-3">
+              <label class="control-label">
+                Upload Image
+              </label>
+            </div>
+            <!-- <div class="col-md-9 col-sm-9 col-xs-9">
+              <div class="custom-file">
+                <input
+                  type="file"
+                  class="form-control"
+                  id="image"
+                  multiple
+                  accept="image/*"
+                  onchange="readURL(this)"
+                />
+              </div>
+              <br />
+              <img
+                id="image_placeholder"
+                src="images/image-placeholder.png"
+                alt="preview"
+                height="100"
+                width="100"
+                style="margin-top: 5px;"
+              />
+            </div> -->
 
-                <div class="row">
-                    <div class="col-md-3 col-sm-3 col-xs-3">
-                        <label class="control-label">
-                            Item Name <span class="text-danger">*</span>
-                        </label>
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-xs-9">
-                        <input type="text" class="form-control" placeholder="Enter event name here" required />
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-3 col-sm-3 col-xs-3">
-                        <label class="control-label">
-                            Location <span class="text-danger">*</span>
-                        </label>
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-xs-9">
-                        <input type="text" class="form-control" placeholder="Enter your location" required />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-sm-3 col-xs-3">
-                        <label class="control-label">
-                            Availability (Start) <span class="text-danger">*</span>
-                        </label>
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-xs-9">
-                        <input type="text" class="form-control" id="start_date" required />
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-3 col-sm-3 col-xs-3">
-                        <label class="control-label">
-                            Availability (End) <span class="text-danger">*</span>
-                        </label>
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-xs-9">
-                        <input type="text" class="form-control" id="end_date" required />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-sm-3 col-xs-3">
-                        <label class="control-label">
-                            Item Description <span class="text-danger">*</span>
-                        </label>
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-xs-9">
-                        <textarea class="form-control" rows="3" placeholder="Please describe your item"
-                            required></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-sm-3 col-xs-3">
-                        <label class="control-label">
-                            Upload Image
-                        </label>
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-xs-9">
-                        <div class="custom-file">
-                            <input type="file" class="form-control" id="image" multiple accept='image/*'
-                                onchange="readURL(this)">
-                        </div>
-                        <br>
-                        <img id="image_placeholder" src="images/image-placeholder.png" alt="preview" height="100"
-                            width="100" style="margin-top: 5px;">
-                    </div>
-                    <div class="pull-right">
-                        <button class="btn btn-primary" form="edit_profile" type="submit">Upload</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+            <div class="col-md-9 col-sm-9 col-xs-9">
+              <input
+                type="text"
+                name="imgsrc"
+                class="form-control"
+                placeholder="Enter the image source"
+              />
+            </div>
+          </div>
+          <div class="pull-right">
+            <button class="btn btn-primary" form="edit_profile" type="submit">
+              Upload
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
-
-
-
-
-
     <div class=" container-fluid footer" style="background-color:#2e6da4;">
+<<<<<<< HEAD
         <div class="container">
             <div class="row" style="margin-top:60px;">
                 <div class="col-sm-3" style="">
@@ -217,38 +256,105 @@
             </div>
             <!--row-->
 
-        </div>
-        <!--container-->
+=======
+      <div class="container">
+        <div class="row" style="margin-top:60px;">
+          <div class="col-sm-3" style="">
+            <p class="footer-text1">Event Meet</p>
 
+            <p class="footer-text2">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in
+            </p>
+
+            <p><a href="#" class="btn btn-danger"> Read more</a></p>
+          </div>
+
+          <div class="col-sm-3">
+            <p class="footer-text1">Quick Links</p>
+
+            <ul>
+              <li style="margin-bottom:7px;"><a href="#">&raquo; Home</a></li>
+              <li style="margin-bottom:7px;">
+                <a href="#">&raquo; Privacy</a>
+              </li>
+              <li style="margin-bottom:7px;"><a href="#">&raquo; Policy</a></li>
+              <li style="margin-bottom:7px;"><a href="#">&raquo; Help</a></li>
+              <li style="margin-bottom:7px;">
+                <a href="#">&raquo; Terms of Service</a>
+              </li>
+              <li style="margin-bottom:7px;">
+                <a href="#">&raquo; Sitemap</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-sm-3">
+            <p class="footer-text1">Contact Us</p>
+            <p><strong>Address:</strong> abc, mnjh(Onbvj)</p>
+            <p><strong>Email:</strong> mnhsgsj@jkdkdjskd.com</p>
+            <p><strong>Phone:</strong> +91-0000000000</p>
+          </div>
+
+          <div class="col-sm-3">
+            <p class="footer-text1">Connect with us</p>
+            <p>
+              <a href="#" style="color:white">
+                <i class="fa fa-facebook" style="font-size:25px"></i
+              ></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#" style="color:white">
+                <i class="fa fa-linkedin" style="font-size:25px"></i
+              ></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#" style="color:white">
+                <i class="fa fa-twitter" style="font-size:25px"></i
+              ></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#" style="color:white">
+                <i class="fa fa-instagram" style="font-size:25px"></i
+              ></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#" style="color:white">
+                <i class="fa fa-youtube" style="font-size:25px"></i
+              ></a>
+            </p>
+          </div>
+>>>>>>> d2271c58ed3003a32a234cb38d0c8e732b22a074
+        </div>
+        <!--row-->
+      </div>
+      <!--container-->
     </div>
     <!--container fluid-->
-
-
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script src="js/bootstrap.min.js"></script>
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js"></script>
     <script>
-        /* 
+      /* 
             Gigmo date picker library for bootstrap 3 for input calendar 
             https://gijgo.com/datepicker/example/bootstrap
         */
-        $('#start_date').datepicker({
-            uiLibrary: 'bootstrap'
-        });
+      $('#start_date').datepicker({
+        uiLibrary: 'bootstrap'
+      });
 
-        $('#end_date').datepicker({
-            uiLibrary: 'bootstrap'
-        });
-
-
+      $('#end_date').datepicker({
+        uiLibrary: 'bootstrap'
+      });
     </script>
 
     <!-- 
@@ -256,28 +362,20 @@
             https://developers.google.com/places/web-service/autocomplete 
         -->
     <script>
-        var placeSearch, autocomplete;
-        function initAutocomplete() {
-            autocomplete = new google.maps.places.Autocomplete(
-                document.getElementById('autocomplete'), { types: ['geocode'] });
-            autocomplete.setFields('address_components');
-            autocomplete.addListener('place_changed', fillInAddress);
-        }
+      var placeSearch, autocomplete;
+      function initAutocomplete() {
+        autocomplete = new google.maps.places.Autocomplete(
+          document.getElementById('autocomplete'),
+          { types: ['geocode'] }
+        );
+        autocomplete.setFields('address_components');
+        autocomplete.addListener('place_changed', fillInAddress);
+      }
     </script>
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNdiyMN5FyK1S7ANcS7Ae39r5CIJcfX3Q&libraries=places&callback=initAutocomplete"
-        async defer></script>
-
-
-
-
-
-
-</body>
-
-
-
-
-
-
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNdiyMN5FyK1S7ANcS7Ae39r5CIJcfX3Q&libraries=places&callback=initAutocomplete"
+      async
+      defer
+    ></script>
+  </body>
 </html>
