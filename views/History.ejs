@@ -69,7 +69,7 @@
     </div>
 
     <div class="container-fluid">
-<<<<<<< HEAD
+
         <ul class="media-list">
         <% var cIndex= 0;
           var aIndex=0;
@@ -85,8 +85,8 @@
               <h5><%= created[cIndex].status %></h5>
               <a class="btn-primary" href="/details/<%= created[cIndex]._id %>">More Details</a>
             </div>
-              
-              
+
+
           <% cIndex++; }
           else { %>
             <img class="media-object" src="<%= accepted[aIndex].imgsrc %>" alt="<%= accepted[aIndex].title %>" height="42" width="42">
@@ -97,15 +97,14 @@
               <h5><%= accepted[aIndex].status %></h5>
               <a class="btn-primary" href="/details/<%= accepted[aIndex]._id %>">More Details</a>
             </div>
-            
+
           <% aIndex++; } %>
           </li>
-        
+
 <%  } %>
         </ul>
     </div>
 
-=======
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -119,8 +118,8 @@
     ></script>
     <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js"></script>
     <script>
-      /* 
-            Gigmo date picker library for bootstrap 3 for input calendar 
+      /*
+            Gigmo date picker library for bootstrap 3 for input calendar
             https://gijgo.com/datepicker/example/bootstrap
         */
       $('#start_date').datepicker({
@@ -132,9 +131,9 @@
       });
     </script>
 
-    <!-- 
+    <!--
             Google places library for autocomplete address
-            https://developers.google.com/places/web-service/autocomplete 
+            https://developers.google.com/places/web-service/autocomplete
         -->
     <script>
       var placeSearch, autocomplete;
@@ -152,6 +151,6 @@
       async
       defer
     ></script>
->>>>>>> 3feb316cbeb40e9785b2bccf332f2c84e62a248e
+
   </body>
 </html>
