@@ -1,1 +1,196 @@
-This is history
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Upload Item</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/mystyle.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"
+    />
+
+    <link
+      href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .header {
+        border-bottom: 1px solid #cccccc;
+      }
+
+      form {
+        margin: 20px;
+        width: 60%;
+      }
+
+      #edit_profile .row {
+        padding: 10px 0px 10px 0px;
+      }
+    </style>
+    <script>
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function(e) {
+            $('#image_placeholder')
+              .attr('src', e.target.result)
+              .width(200)
+              .height(200);
+          };
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>
+  </head>
+
+  <body style="background-color:#FAFAFA;">
+    <% include Header %>
+
+    <div class="container-fluid" style="margin-top: 70px;">
+      <h1>Order History</h1>
+    </div>
+
+    <div class="container-fluid">
+      Placeholder
+    </div>
+
+    <div class=" container-fluid footer" style="background-color:#2e6da4;">
+      <div class="container">
+        <div class="row" style="margin-top:60px;">
+          <div class="col-sm-3" style="">
+            <p class="footer-text1">Event Meet</p>
+
+            <p class="footer-text2">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in
+            </p>
+
+            <p><a href="#" class="btn btn-danger"> Read more</a></p>
+          </div>
+
+          <div class="col-sm-3">
+            <p class="footer-text1">Quick Links</p>
+
+            <ul>
+              <li style="margin-bottom:7px;"><a href="#">&raquo; Home</a></li>
+              <li style="margin-bottom:7px;">
+                <a href="#">&raquo; Privacy</a>
+              </li>
+              <li style="margin-bottom:7px;"><a href="#">&raquo; Policy</a></li>
+              <li style="margin-bottom:7px;"><a href="#">&raquo; Help</a></li>
+              <li style="margin-bottom:7px;">
+                <a href="#">&raquo; Terms of Service</a>
+              </li>
+              <li style="margin-bottom:7px;">
+                <a href="#">&raquo; Sitemap</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-sm-3">
+            <p class="footer-text1">Contact Us</p>
+            <p><strong>Address:</strong> abc, mnjh(Onbvj)</p>
+            <p><strong>Email:</strong> mnhsgsj@jkdkdjskd.com</p>
+            <p><strong>Phone:</strong> +91-0000000000</p>
+          </div>
+
+          <div class="col-sm-3">
+            <p class="footer-text1">Connect with us</p>
+            <p>
+              <a href="#" style="color:white">
+                <i class="fa fa-facebook" style="font-size:25px"></i
+              ></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#" style="color:white">
+                <i class="fa fa-linkedin" style="font-size:25px"></i
+              ></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#" style="color:white">
+                <i class="fa fa-twitter" style="font-size:25px"></i
+              ></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#" style="color:white">
+                <i class="fa fa-instagram" style="font-size:25px"></i
+              ></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#" style="color:white">
+                <i class="fa fa-youtube" style="font-size:25px"></i
+              ></a>
+            </p>
+          </div>
+        </div>
+        <!--row-->
+      </div>
+      <!--container-->
+    </div>
+    <!--container fluid-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js"></script>
+    <script>
+      /* 
+            Gigmo date picker library for bootstrap 3 for input calendar 
+            https://gijgo.com/datepicker/example/bootstrap
+        */
+      $('#start_date').datepicker({
+        uiLibrary: 'bootstrap'
+      });
+
+      $('#end_date').datepicker({
+        uiLibrary: 'bootstrap'
+      });
+    </script>
+
+    <!-- 
+            Google places library for autocomplete address
+            https://developers.google.com/places/web-service/autocomplete 
+        -->
+    <script>
+      var placeSearch, autocomplete;
+      function initAutocomplete() {
+        autocomplete = new google.maps.places.Autocomplete(
+          document.getElementById('autocomplete'),
+          { types: ['geocode'] }
+        );
+        autocomplete.setFields('address_components');
+        autocomplete.addListener('place_changed', fillInAddress);
+      }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNdiyMN5FyK1S7ANcS7Ae39r5CIJcfX3Q&libraries=places&callback=initAutocomplete"
+      async
+      defer
+    ></script>
+  </body>
+</html>
