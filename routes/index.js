@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   const foods = Food.find();
   res.render('index', {
     title: 'Express',
-    foods: foods
+    items: foods
   });
 });
 
@@ -25,9 +25,6 @@ router.get('/profile', (req, res, next) => {
 
 router.get('/history', (req, res, next) => {
   res.render('history');
-})
-
-router.get('/home', function(req, res, next) {
-  res.render('sample', { title: 'Express' });
 });
+
 module.exports = router;
