@@ -70,7 +70,7 @@
 
     <div class="container-fluid">
       <div class="row">
-        <form id="edit_profile" action="HomepageUserLoggedIn.html">
+        <form id="edit_profile" action="/food" method="post">
           <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-3">
               <label class="control-label">
@@ -80,6 +80,7 @@
             <div class="col-md-9 col-sm-9 col-xs-9">
               <input
                 type="text"
+                name="title"
                 class="form-control"
                 placeholder="Enter event name here"
                 required
@@ -96,6 +97,7 @@
             <div class="col-md-9 col-sm-9 col-xs-9">
               <input
                 type="text"
+                name="location"
                 class="form-control"
                 placeholder="Enter your location"
                 required
@@ -129,6 +131,7 @@
             <div class="col-md-9 col-sm-9 col-xs-9">
               <textarea
                 class="form-control"
+                name="description"
                 rows="3"
                 placeholder="Please describe your item"
                 required
@@ -166,6 +169,7 @@
             <div class="col-md-9 col-sm-9 col-xs-9">
               <input
                 type="text"
+                name="imgsrc"
                 class="form-control"
                 placeholder="Enter the image source"
               />
