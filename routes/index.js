@@ -88,8 +88,8 @@ router.get('/history', (req, res, next) => {
   ]).then(([createdItems, acceptedItems]) => {
     console.log(util.format('user=%O member=%O', createdItems, acceptedItems));
     res.render('history', {
-      created: createdItems,
-      accepted: acceptedItems
+      created: createdItems.sort(function(a,b){return b.expiration - a.expiration}),
+      accepted: acceptedItems.sort(function(a,b){return b.expiration - a.expiration})
     });
   });
 });

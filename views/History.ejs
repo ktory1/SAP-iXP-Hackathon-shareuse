@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Upload Item</title>
+    <title>Order History</title>
 
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link
@@ -69,128 +69,40 @@
     </div>
 
     <div class="container-fluid">
-      Placeholder
+        <ul class="media-list">
+        <% var cIndex= 0;
+          var aIndex=0;
+        for(var i=0; i < (created.length + accepted.length); i++) { %>
+          <li class="media">
+              <div class="media-left">
+          <% if(!accepted[aIndex] || created[cIndex].expiration > accepted[aIndex].expiration){ %>
+            <img class="media-object" src="<%= created[cIndex].imgsrc %>" alt="<%= created[cIndex].title %>" height="42" width="42">
+          </div>
+          <div class="media-body">
+              <h4 class="media-heading"><%= created[cIndex].title %></h4>
+              <h4 class="col-sm-5"><%= created[cIndex].expiration %></h4>
+              <h5><%= created[cIndex].status %></h5>
+              <a class="btn-primary" href="/details/<%= created[cIndex]._id %>">More Details</a>
+            </div>
+              
+              
+          <% cIndex++; }
+          else { %>
+            <img class="media-object" src="<%= accepted[aIndex].imgsrc %>" alt="<%= accepted[aIndex].title %>" height="42" width="42">
+          </div>
+          <div class="media-body">
+              <h4 class="media-heading"><%= accepted[aIndex].title %></h4>
+              <h4 class="col-sm-5"><%= accepted[aIndex].expiration %></h4>
+              <h5><%= accepted[aIndex].status %></h5>
+              <a class="btn-primary" href="/details/<%= accepted[aIndex]._id %>">More Details</a>
+            </div>
+            
+          <% aIndex++; } %>
+          </li>
+        
+<%  } %>
+        </ul>
     </div>
 
-    <div class=" container-fluid footer" style="background-color:#2e6da4;">
-      <div class="container">
-        <div class="row" style="margin-top:60px;">
-          <div class="col-sm-3" style="">
-            <p class="footer-text1">Event Meet</p>
-
-            <p class="footer-text2">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in
-            </p>
-
-            <p><a href="#" class="btn btn-danger"> Read more</a></p>
-          </div>
-
-          <div class="col-sm-3">
-            <p class="footer-text1">Quick Links</p>
-
-            <ul>
-              <li style="margin-bottom:7px;"><a href="#">&raquo; Home</a></li>
-              <li style="margin-bottom:7px;">
-                <a href="#">&raquo; Privacy</a>
-              </li>
-              <li style="margin-bottom:7px;"><a href="#">&raquo; Policy</a></li>
-              <li style="margin-bottom:7px;"><a href="#">&raquo; Help</a></li>
-              <li style="margin-bottom:7px;">
-                <a href="#">&raquo; Terms of Service</a>
-              </li>
-              <li style="margin-bottom:7px;">
-                <a href="#">&raquo; Sitemap</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-sm-3">
-            <p class="footer-text1">Contact Us</p>
-            <p><strong>Address:</strong> abc, mnjh(Onbvj)</p>
-            <p><strong>Email:</strong> mnhsgsj@jkdkdjskd.com</p>
-            <p><strong>Phone:</strong> +91-0000000000</p>
-          </div>
-
-          <div class="col-sm-3">
-            <p class="footer-text1">Connect with us</p>
-            <p>
-              <a href="#" style="color:white">
-                <i class="fa fa-facebook" style="font-size:25px"></i
-              ></a>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="#" style="color:white">
-                <i class="fa fa-linkedin" style="font-size:25px"></i
-              ></a>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="#" style="color:white">
-                <i class="fa fa-twitter" style="font-size:25px"></i
-              ></a>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="#" style="color:white">
-                <i class="fa fa-instagram" style="font-size:25px"></i
-              ></a>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="#" style="color:white">
-                <i class="fa fa-youtube" style="font-size:25px"></i
-              ></a>
-            </p>
-          </div>
-        </div>
-        <!--row-->
-      </div>
-      <!--container-->
-    </div>
-    <!--container fluid-->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <script src="js/bootstrap.min.js"></script>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js"></script>
-    <script>
-      /* 
-            Gigmo date picker library for bootstrap 3 for input calendar 
-            https://gijgo.com/datepicker/example/bootstrap
-        */
-      $('#start_date').datepicker({
-        uiLibrary: 'bootstrap'
-      });
-
-      $('#end_date').datepicker({
-        uiLibrary: 'bootstrap'
-      });
-    </script>
-
-    <!-- 
-            Google places library for autocomplete address
-            https://developers.google.com/places/web-service/autocomplete 
-        -->
-    <script>
-      var placeSearch, autocomplete;
-      function initAutocomplete() {
-        autocomplete = new google.maps.places.Autocomplete(
-          document.getElementById('autocomplete'),
-          { types: ['geocode'] }
-        );
-        autocomplete.setFields('address_components');
-        autocomplete.addListener('place_changed', fillInAddress);
-      }
-    </script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNdiyMN5FyK1S7ANcS7Ae39r5CIJcfX3Q&libraries=places&callback=initAutocomplete"
-      async
-      defer
-    ></script>
   </body>
 </html>
