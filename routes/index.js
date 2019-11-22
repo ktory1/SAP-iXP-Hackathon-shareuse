@@ -82,4 +82,16 @@ router.get('/profile', (req, res, next) => {
   res.render('profile');
 });
 
+<<<<<<< HEAD
+router.get('/history', (req, res, next) => {
+  res.render('history');
+});
+
+router.get('/home', (req, res, next) => {
+  res.render('HomepageUserLoggedIn');
+});
+
+
+=======
+>>>>>>> b1ed90cde6587fbf73d574c3c61174667fbad01d
 module.exports = router;
