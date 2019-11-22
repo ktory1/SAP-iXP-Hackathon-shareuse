@@ -50,6 +50,7 @@ router.post('/', (req, res, next) => {
         description: req.body.description,
         expiration: req.body.expiration,
         imgsrc: req.body.imgsrc,
+        status: req.body.status,
         active: true,
     });
     food.save().then((result) => {

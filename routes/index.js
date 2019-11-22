@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/create', function(req, res, next) {
+router.get('/create', (req, res, next) => {
   res.render('create');
 });
 

@@ -18,6 +18,10 @@ const FoodSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    status: {
+        type: String,
+        required: true
+    },
     active: {
         type: Boolean,
         required: true
