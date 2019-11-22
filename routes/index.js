@@ -2,20 +2,28 @@ var express = require('express');
 var router = express.Router();
 const Food = require('../models/Food');
 const mongoose = require('mongoose');
+var util = require('util');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  const foods = Food.find();
-  console.log(foods);
-  res.render('index', {
-    title: 'Express',
-    items: foods
-  });
   Food.find()
     .exec()
     .then(foods => {
       // console.log(JSON.stringify(foods));
       res.render('index', {
+        title: 'Express',
+        items: foods
+      });
+    });
+});
+
+/* GET logged in home page. */
+router.get('/home', (req, res, next) => {
+  Food.find()
+    .exec()
+    .then(foods => {
+      // console.log(JSON.stringify(foods));
+      res.render('HomepageUserLoggedIn', {
         title: 'Express',
         items: foods
       });
@@ -38,7 +46,7 @@ router.post('/food', function(req, res) {
     status: req.body.status,
     active: true,
     creator: 'me',
-    acceptor: ''
+    acceptor: 'me'
   });
   food.save().then(result => {
     // console.log(result);
@@ -58,10 +66,26 @@ router.get('/details/:foodId', (req, res, next) => {
     });
 });
 
+/* POST accept food details page */
+router.post('/details/:foodId', (req, res) => {
+  Food.findOneAndUpdate(
+    { _id: req.params.foodId },
+    { acceptor: 'them' },
+    { upsert: true },
+    (err, doc) => {
+      if (err) res.status(500).json({ error: err });
+      res.status(201).json({
+        message: 'accepted food order',
+        acceptedFood: doc
+      });
+    }
+  );
+});
+
 /* GET history page. */
 router.get('/history', (req, res, next) => {
   Promise.all([
-    Food.find({ creater: 'me' }),
+    Food.find({ creator: 'me' }),
     Food.find({ acceptor: 'me' })
   ]).then(([createdItems, acceptedItems]) => {
     console.log(util.format('user=%O member=%O', createdItems, acceptedItems));
@@ -82,16 +106,4 @@ router.get('/profile', (req, res, next) => {
   res.render('profile');
 });
 
-<<<<<<< HEAD
-router.get('/history', (req, res, next) => {
-  res.render('history');
-});
-
-router.get('/home', (req, res, next) => {
-  res.render('HomepageUserLoggedIn');
-});
-
-
-=======
->>>>>>> b1ed90cde6587fbf73d574c3c61174667fbad01d
 module.exports = router;
