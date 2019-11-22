@@ -27,4 +27,7 @@ router.get('/history', (req, res, next) => {
   res.render('history');
 })
 
+router.get('/home', function(req, res, next) {
+  res.render('sample', { title: 'Express' });
+});
 module.exports = router;
