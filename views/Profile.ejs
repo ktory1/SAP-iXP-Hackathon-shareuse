@@ -1,333 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>User Profile</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/mystyle.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-  <script src="js/bootstrap.js"></script>
+  <head>
+    <title>User Profile</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/mystyle.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"
+    />
+    <script src="js/bootstrap.js"></script>
+  </head>
+  <body style="background-color:#FAFAFA;">
+    <% include Header %>
 
+    <div class="container-fluid" style=" margin-bottom:30px">
+      <div class="row" style="margin-top:70px">
+        <div class="col-sm-3"></div>
 
-</head>
-<body style="background-color:#FAFAFA;">
+        <div class="col-sm-6" style="margin-top:60px;">
+          <h1 class="forever-color">Profile Information</h1>
 
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
+          <hr
+            style="border:none;height:1px;background-color:#6f7287; color:#6f7287"
+          />
 
+          <h3><strong> Profile Net ID</strong></h3>
+          <p style="font-size:15px; margin-top:15px;">
+            sxxxxxxxxxxxxxxx@dal.ca<a href="#">
+              <i style="font-size:24px" class="fa fa-edit"></i
+            ></a>
+          </p>
 
-      <div class="navbar-header">
-       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <strong><a class="navbar-brand" href="/home" style="color:#0066ff">Event Meet</a></strong>
+          <br />
+          <hr />
+          <h3><strong>Profile Photo </strong></h3>
+          <p style="font-size:100px; margin-top:-15px;" class="forever-color">
+            <i style="color:Grey;" class="fas fa-user-circle"></i>
+          </p>
+          <div
+            class="file btn btn-md btn-primary"
+            style="position: relative; overflow: hidden; margin-top:-20px;"
+          >
+            Upload
+            <input
+              type="file"
+              name="file"
+              style=" position: absolute; font-size: 30px; opacity: 0; right: 0; top: 0;"
+              multiple
+              accept="image/*"
+            />
+          </div>
+
+          <br />
+          <hr />
+          <h3><strong>Contact Information</strong></h3>
+          <br />
+
+          <div class="form-group">
+            <h4><strong>Prefix:</strong></h4>
+            <select class="form-control">
+              <option>---</option>
+              <option>Mr.</option>
+              <option>Mrs.</option>
+              <option>Ms.</option>
+              <option>Prof.</option>
+            </select>
+          </div>
+          <br />
+
+          <div class="form-group">
+            <h4><strong> First Name:</strong></h4>
+            <input type="text" class="form-control" value="Shubham" />
+          </div>
+          <br />
+          <div class="form-group">
+            <h4><strong> Last Name: </strong></h4>
+            <input type="text" class="form-control" value="Narang" />
+          </div>
+
+          <br />
+
+          <div class="form-group">
+            <h4><strong>Mobile Number: </strong></h4>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Ender Mobile Number"
+            />
+          </div>
+
+          <br />
+          <hr />
+
+          <h3><strong>Home Address</strong></h3>
+          <br />
+
+          <div class="form-group">
+            <h4><strong> Address:</strong></h4>
+            <input type="text" class="form-control" value="" />
+          </div>
+          <br />
+          <div class="form-group">
+            <h4><strong> Address1: </strong></h4>
+            <input type="text" class="form-control" value="" />
+          </div>
+
+          <br />
+
+          <div class="form-group">
+            <h4><strong>Country: </strong></h4>
+            <select class="form-control">
+              <option>---</option>
+              <option>Canada</option>
+              <option>India</option>
+              <option>USA</option>
+            </select>
+          </div>
+          <br />
+
+          <div class="form-group">
+            <h4><strong> Postcode: </strong></h4>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Ender Postcode"
+            />
+          </div>
+
+          <br />
+          <br />
+          <button
+            type="button"
+            class="btn btn-warning"
+            style="margin-right:30px; "
+          >
+            Save
+          </button>
+
+          <button type="button" class="btn btn-danger">Reset</button>
+        </div>
+        <!--end of column-->
+
+        <div class="col-sm-3"></div>
       </div>
+      <!--end of row-->
+    </div>
+    <!--end of container-->
 
+    <div class=" container-fluid footer" style="background-color:#2e6da4;">
+      <div class="container">
+        <div class="row" style="margin-top:60px;">
+          <div class="col-sm-3" style="">
+            <p class="footer-text1">Event Meet</p>
 
-      <div class="collapse navbar-collapse" id="collapse">
-      <ul class="nav navbar-nav navbar-right" >
-        <li class="active"><a href="/home" style="color:#6f7287">Home</a></li>
-          <li><a href="/create">Post Item</a></li>
-         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown"  href="#"><i style="font-size:17px;" class="fas fa-user-circle"></i>
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li ><a href="/profile">Profile</a></li>
-            <li><a href="/history">History</a></li>
-             <li><a href="#">Track Order</a></li>
-            <li class="divider"></li>
-            <li><a href="UserProfile.html">Creditibility</a></li>
-              <li><a href="#">Redeem Points (15)</a></li>
-               <li class="divider"></li>
-               <li><a href="/">Logout</a></li>
+            <p class="footer-text2">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in
+            </p>
 
-          </ul>
-        </li>
-      </ul>
-       <form class="navbar-form navbar-left  " action="#">
-        <div class="input-group">
-          <input type="text" class="form-control mystyle" placeholder="Search Event" name="search" required>
-          <div class="input-group-btn">
-            <button class="btn btn-default mystyle1 " type="submit">
-              <i class="glyphicon glyphicon-search"></i>
-            </button>
+            <p><a href="#" class="btn btn-danger"> Read more</a></p>
+          </div>
+
+          <div class="col-sm-3">
+            <p class="footer-text1">Quick Links</p>
+
+            <ul>
+              <li style="margin-bottom:7px;"><a href="#">&raquo; Home</a></li>
+              <li style="margin-bottom:7px;">
+                <a href="#">&raquo; Privacy</a>
+              </li>
+              <li style="margin-bottom:7px;"><a href="#">&raquo; Policy</a></li>
+              <li style="margin-bottom:7px;"><a href="#">&raquo; Help</a></li>
+              <li style="margin-bottom:7px;">
+                <a href="#">&raquo; Terms of Service</a>
+              </li>
+              <li style="margin-bottom:7px;">
+                <a href="#">&raquo; Sitemap</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-sm-3">
+            <p class="footer-text1">Contact Us</p>
+            <p><strong>Address:</strong> abc, mnjh(Onbvj)</p>
+            <p><strong>Email:</strong> mnhsgsj@jkdkdjskd.com</p>
+            <p><strong>Phone:</strong> +91-0000000000</p>
+          </div>
+
+          <div class="col-sm-3">
+            <p class="footer-text1">Connect with us</p>
+            <p>
+              <a href="#" style="color:white">
+                <i class="fa fa-facebook" style="font-size:25px"></i
+              ></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#" style="color:white">
+                <i class="fa fa-linkedin" style="font-size:25px"></i
+              ></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#" style="color:white">
+                <i class="fa fa-twitter" style="font-size:25px"></i
+              ></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#" style="color:white">
+                <i class="fa fa-instagram" style="font-size:25px"></i
+              ></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#" style="color:white">
+                <i class="fa fa-youtube" style="font-size:25px"></i
+              ></a>
+            </p>
           </div>
         </div>
-      </form>
+        <!--row-->
       </div>
-
-
+      <!--container-->
     </div>
-  </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container-fluid" style=" margin-bottom:30px">
-
-
-
-  <div class="row" style="margin-top:70px">
-
-
-
-
-
-    <div class="col-sm-3">
-
-
-    </div>
-
-
-
-
-
-
-    <div class="col-sm-6" style="margin-top:60px;">
-
-
-    <h1 class= "forever-color"> Profile Information</h1>
-
-    <hr style="border:none;height:1px;background-color:#6f7287; color:#6f7287" />
-
-        <h3> <strong> Profile Net ID</strong></h3>
-        <p style="font-size:15px; margin-top:15px;">sxxxxxxxxxxxxxxx@dal.ca<a href="#">  <i style="font-size:24px" class="fa fa-edit"></i></a></p>
-
-    <br>
-    <hr>
-    <h3> <strong>Profile Photo </strong> </h3>
-         <p style="font-size:100px; margin-top:-15px;" class= "forever-color"> <i  style="color:Grey;" class="fas fa-user-circle"></i></p>
-         <div class="file btn btn-md btn-primary" style="position: relative; overflow: hidden; margin-top:-20px;">
-							Upload
-							<input type="file" name="file" style=" position: absolute; font-size: 30px; opacity: 0; right: 0; top: 0;" multiple accept='image/*'/>
-						</div>
-
-           <br>
-           <hr>
-   <h3> <strong>Contact Information</strong>  </h3>
-   <br>
-
-   <div class="form-group">
-       <h4> <strong>Prefix:</strong> </h4>
-      <select class="form-control" >
-      <option>---</option>
-        <option>Mr.</option>
-        <option>Mrs.</option>
-        <option>Ms.</option>
-        <option>Prof.</option>
-      </select>
-
-      </div>
-      <br>
-
-   <div class="form-group">
-  <h4><strong> First Name:</strong>   </h4>
-   <input type="text" class="form-control" value="Shubham">
-  </div>
-  <br>
-   <div class="form-group">
- <h4> <strong> Last Name: </strong> </h4>
-   <input type="text" class="form-control" value="Narang">
-  </div>
-
-  <br>
-
-  <div class="form-group">
- <h4>  <strong>Mobile Number: </strong> </h4>
-   <input type="text" class="form-control" placeholder="Ender Mobile Number">
-  </div>
-
-
-
-
-
-              <br>
-           <hr>
-
-
-   <h3> <strong>Home Address</strong> </h3>
-   <br>
-
-
-   <div class="form-group">
-  <h4><strong> Address:</strong>  </h4>
-   <input type="text" class="form-control" value="">
-  </div>
-  <br>
-   <div class="form-group">
-  <h4><strong> Address1: </strong></h4>
-   <input type="text" class="form-control" value="">
-  </div>
-
-  <br>
-
-
-   <div class="form-group">
-       <h4> <strong>Country: </strong></h4>
-      <select class="form-control" >
-      <option>---</option>
-        <option>Canada</option>
-        <option>India</option>
-        <option>USA</option>
-      </select>
-
-      </div>
-      <br>
-
-  <div class="form-group">
-  <h4><strong> Postcode: </strong></h4>
-   <input type="text" class="form-control" placeholder="Ender Postcode">
-  </div>
-
-     <br>
-     <br>
-  <button type="button" class="btn btn-warning" style="margin-right:30px; ">Save</button>
-
-  <button type="button" class="btn btn-danger">Reset</button>
-
-
-
-
-
-   </div> <!--end of column-->
-
-
-
-    <div class="col-sm-3">
-
-
-    </div>
-
-
-
-
-
-
-
-
-
-   </div>  <!--end of row-->
-
-</div> <!--end of container-->
-
-
-
-
-
-
-
-<div class=" container-fluid footer" style="background-color:#2e6da4;" >
-<div class="container">
-  <div class="row" style="margin-top:60px;">
-    <div class="col-sm-3" style="">
-    <p class="footer-text1"> Event Meet</p>
-
-
-    <p class="footer-text2"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in </p>
-
-    <p>	 <a href="#" class="btn btn-danger"> Read more</a></p>
-
-
-
-    </div>
-
-
-    <div class="col-sm-3">
-
-
-
-       <p class="footer-text1">Quick Links</p>
-
-     <ul>
-    <li style="margin-bottom:7px;"><a href="#">&raquo; Home</a></li>
-    <li style="margin-bottom:7px;"><a href="#">&raquo; Privacy</a></li>
-    <li style="margin-bottom:7px;"><a href="#">&raquo; Policy</a></li>
-    <li style="margin-bottom:7px;"><a href="#">&raquo; Help</a></li>
-    <li style="margin-bottom:7px;"><a href="#">&raquo; Terms of Service</a></li>
-    <li style="margin-bottom:7px;"><a href="#">&raquo; Sitemap</a></li>
-
-  </ul>
-
-
-    </div>
-
-
-     <div class="col-sm-3">
-
-           <p class="footer-text1">Contact Us</p>
-           <p><strong>Address:</strong> abc, mnjh(Onbvj)</p>
-           <p><strong>Email:</strong> mnhsgsj@jkdkdjskd.com</p>
-           <p><strong>Phone:</strong> +91-0000000000</p>
-    </div>
-
-      <div class="col-sm-3">
-
-
-     <p class="footer-text1">Connect with us</p>
-          <p>
-          <a href="#" style="color:white"> <i class="fa fa-facebook" style="font-size:25px"></i></a>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="#" style="color:white"> <i class="fa fa-linkedin" style="font-size:25px"></i></a>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="#" style="color:white"> <i class="fa fa-twitter" style="font-size:25px"></i></a>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="#" style="color:white"> <i class="fa fa-instagram" style="font-size:25px"></i></a>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="#" style="color:white"> <i class="fa fa-youtube" style="font-size:25px"></i></a>
-           </p>
-
-    </div>
-
-
-
-  </div> <!--row-->
-
-</div> <!--container-->
-
-</div> <!--container fluid-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
+    <!--container fluid-->
+  </body>
 </html>
