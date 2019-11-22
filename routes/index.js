@@ -27,4 +27,9 @@ router.get('/history', (req, res, next) => {
   res.render('history');
 });
 
+router.get('/home', (req, res, next) => {
+  res.render('HomepageUserLoggedIn');
+});
+
+
 module.exports = router;
