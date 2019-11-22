@@ -1,64 +1,12 @@
 var express = require('express');
 var router = express.Router();
-const Food = require('../models/Food');
-const mongoose = require('mongoose');
+const food_controller = require('../controllers/foods');
 
 /* GET food listing. */
-router.get('/', function(req, res, next) {
-  Food.find()
-    .exec()
-    .then(foods => {
-      console.log(JSON.stringify(foods));
-      res.status(200).json(foods);
-    });
-});
+router.get('/', food_controller.food_get);
 
-router.get('/:foodId', (req, res, next) => {
-  Food.findById(req.params.foodId)
-    .exec()
-    .then(food => {
-      res.status(200).json(food);
-    });
-});
+router.get('/:foodId', food_controller.food_getId);
 
-// title: {
-//     type: String,
-//     required: true
-// },
-// description: {
-//     type: String,
-//     required: true
-// },
-// expiration: {
-//     type: Date,
-//     required: true
-// },
-// imgsrc: {
-//     type: String,
-//     required: true
-// },
-// active: {
-//     type: Boolean,
-//     required: true
-// }
-
-router.post('/', (req, res, next) => {
-
-    const food = new Food({
-        _id: new mongoose.Types.ObjectId(),
-        title: req.body.title,
-        description: req.body.description,
-        expiration: req.body.expiration,
-        imgsrc: req.body.imgsrc,
-        active: true,
-    });
-    food.save().then((result) => {
-        console.log(result);
-        res.status(201).json({
-            message: 'created product successfully',
-            createdFood: food
-        });
-    });
-})
+router.post('/', food_controller.food_create);
 
 module.exports = router;
