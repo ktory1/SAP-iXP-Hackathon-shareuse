@@ -7,7 +7,11 @@
 
     <div class="carousel-inner">
       <div class="item active">
-        <img src="images/fourth.jpg" alt="image1" style="max-height:600px;width:100%;" />
+        <img
+          src="images/fourth.jpg"
+          alt="image1"
+          style="max-height:600px;width:100%;"
+        />
         <div class="carousel-caption">
           <h1></h1>
           <p></p>
@@ -15,7 +19,11 @@
       </div>
 
       <div class="item">
-        <img src="images/third.jpg" alt="image1" style="max-height:600px;width:100%;" />
+        <img
+          src="images/third.jpg"
+          alt="image1"
+          style="max-height:600px;width:100%;"
+        />
         <div class="carousel-caption">
           <h1></h1>
           <p></p>
@@ -23,7 +31,11 @@
       </div>
 
       <div class="item">
-        <img src="images/first.jpg" alt="image1" style="max-height:600px;width:100%;" />
+        <img
+          src="images/first.jpg"
+          alt="image1"
+          style="max-height:600px;width:100%;"
+        />
         <div class="carousel-caption">
           <h1></h1>
           <p></p>
@@ -46,12 +58,7 @@
 <div class="gallery-container cards-container">
   <div class="container">
     <div class="row">
-
-
-
-
-
-<% for(var i=0; i < items.length; i++) { %>
+      <% for(var i=0; i < items.length; i++) { %>
 
       <div class="col-md-6 col-lg-4">
         <div class="transform-on-hover card ">
@@ -65,17 +72,23 @@
           <div class="card-body">
             <h6><%= items[i].title %></h6>
 
-            <p class="text-muted card-text"  style="min-height:30px; max-height:30px; min-width:100%">
-            <%= items[i].description %>
+            <p
+              class="text-muted card-text"
+              style="
+              min-height:30px; 
+              max-height:30px; 
+              min-width:100%;
+              text-overflow: ellipsis;
+              white-space: inherit;
+              overflow: hidden;"
+            >
+              <%= items[i].description %>
             </p>
           </div>
         </div>
       </div>
 
-<% } %>
-
-
-
+      <% } %>
     </div>
   </div>
 </div>

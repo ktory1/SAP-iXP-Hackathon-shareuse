@@ -68,7 +68,7 @@ router.get('/details/:foodId', (req, res, next) => {
 router.post('/details/:foodId', (req, res) => {
   Food.findOneAndUpdate(
     { _id: req.params.foodId },
-    { acceptor: 'them', status: 'in progress' },
+    { acceptor: 'me', status: 'in progress' },
     { upsert: true, new: true },
     (err, doc) => {
       if (err) res.status(500).json({ error: err });
