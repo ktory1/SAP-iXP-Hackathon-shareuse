@@ -68,14 +68,11 @@ router.get('/details/:foodId', (req, res, next) => {
 router.post('/details/:foodId', (req, res) => {
   Food.findOneAndUpdate(
     { _id: req.params.foodId },
-    { acceptor: 'them' },
-    { upsert: true },
+    { acceptor: 'me', status: 'in progress' },
+    { upsert: true, new: true },
     (err, doc) => {
       if (err) res.status(500).json({ error: err });
-      res.status(201).json({
-        message: 'accepted food order',
-        acceptedFood: doc
-      });
+      res.render('details', doc);
     }
   );
 });

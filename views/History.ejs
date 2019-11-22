@@ -69,6 +69,7 @@
     </div>
 
     <div class="container-fluid">
+<<<<<<< HEAD
         <ul class="media-list">
         <% var cIndex= 0;
           var aIndex=0;
@@ -104,5 +105,53 @@
         </ul>
     </div>
 
+=======
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js"></script>
+    <script>
+      /* 
+            Gigmo date picker library for bootstrap 3 for input calendar 
+            https://gijgo.com/datepicker/example/bootstrap
+        */
+      $('#start_date').datepicker({
+        uiLibrary: 'bootstrap'
+      });
+
+      $('#end_date').datepicker({
+        uiLibrary: 'bootstrap'
+      });
+    </script>
+
+    <!-- 
+            Google places library for autocomplete address
+            https://developers.google.com/places/web-service/autocomplete 
+        -->
+    <script>
+      var placeSearch, autocomplete;
+      function initAutocomplete() {
+        autocomplete = new google.maps.places.Autocomplete(
+          document.getElementById('autocomplete'),
+          { types: ['geocode'] }
+        );
+        autocomplete.setFields('address_components');
+        autocomplete.addListener('place_changed', fillInAddress);
+      }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNdiyMN5FyK1S7ANcS7Ae39r5CIJcfX3Q&libraries=places&callback=initAutocomplete"
+      async
+      defer
+    ></script>
+>>>>>>> 3feb316cbeb40e9785b2bccf332f2c84e62a248e
   </body>
 </html>

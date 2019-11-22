@@ -7,18 +7,38 @@
 
     <div class="carousel-inner">
       <div class="item active">
-        <img src="images/slide2.jpg" alt="image1" style="width:100%;" />
+        <img
+          src="images/fourth.jpg"
+          alt="image1"
+          style="max-height:600px;width:100%;"
+        />
         <div class="carousel-caption">
-          <h1>Lorem Ipsum</h1>
-          <p>Why do we use it!</p>
+          <h1></h1>
+          <p></p>
         </div>
       </div>
 
       <div class="item">
-        <img src="images/slide1.jpg" alt="image1" style="width:100%;" />
+        <img
+          src="images/third.jpg"
+          alt="image1"
+          style="max-height:600px;width:100%;"
+        />
         <div class="carousel-caption">
-          <h1>Lorem Ipsum</h1>
-          <p>Where can I get some!</p>
+          <h1></h1>
+          <p></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img
+          src="images/first.jpg"
+          alt="image1"
+          style="max-height:600px;width:100%;"
+        />
+        <div class="carousel-caption">
+          <h1></h1>
+          <p></p>
         </div>
       </div>
 
@@ -38,12 +58,7 @@
 <div class="gallery-container cards-container">
   <div class="container">
     <div class="row">
-
-
-
-
-
-<% for(var i=0; i < items.length; i++) { %>
+      <% for(var i=0; i < items.length; i++) { %>
 
       <div class="col-md-6 col-lg-4">
         <div class="transform-on-hover card ">
@@ -51,23 +66,29 @@
             ><img
               src="<%= items[i].imgsrc %>"
               class="card-img-top"
-              style="min-height:200px; min-width:100%"
+              style="min-height:200px; max-height:200px; min-width:100%"
               alt="error loading image"
           /></a>
           <div class="card-body">
             <h6><%= items[i].title %></h6>
 
-            <p class="text-muted card-text">
-            <%= items[i].description %>
+            <p
+              class="text-muted card-text"
+              style="
+              min-height:30px; 
+              max-height:30px; 
+              min-width:100%;
+              text-overflow: ellipsis;
+              white-space: inherit;
+              overflow: hidden;"
+            >
+              <%= items[i].description %>
             </p>
           </div>
         </div>
       </div>
 
-<% } %>
-
-
-
+      <% } %>
     </div>
   </div>
 </div>
