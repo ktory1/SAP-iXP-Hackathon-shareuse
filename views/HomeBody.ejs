@@ -59,13 +59,13 @@
             ><img
               src="<%= items[i].imgsrc %>"
               class="card-img-top"
-              style="min-height:200px; min-width:100%"
+              style="min-height:200px; max-height:200px; min-width:100%"
               alt="error loading image"
           /></a>
           <div class="card-body">
             <h6><%= items[i].title %></h6>
 
-            <p class="text-muted card-text">
+            <p class="text-muted card-text"  style="min-height:30px; max-height:30px; min-width:100%">
             <%= items[i].description %>
             </p>
           </div>
