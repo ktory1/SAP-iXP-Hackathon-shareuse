@@ -3,9 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
+mongoose.connect(
+  'mongodb+srv://atlasAdmin:' +
+    process.env.MONGO_ATLAS_PW +
+    '@cluster0-4mbkp.mongodb.net/test?retryWrites=true&w=majority'
+);
 
 var app = express();
 
